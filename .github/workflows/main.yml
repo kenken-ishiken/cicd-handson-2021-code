@@ -66,7 +66,7 @@ jobs:
           git branch feature/${{ github.run_number }}
           git checkout feature/${{ github.run_number }}
           # image tagを書き換えます
-          sed -i -e "s|image: docker.pkg.github.com/${{ github.repository }}/go-image:.*|image: docker.pkg.github.com/${{ github.repository }}/go-image:${{ github.run_number }}|" manifests/goapp.yaml
+          sed -i -e "s|image: docker.pkg.github.com/${{ github.repository }}/go-image:.*|image: docker.pkg.github.com/${{ github.repository }}/go-image:${{ github.run_number }}|" manifests/goapp.yml
           # プッシュ処理
           git add manifests
           git commit -m "Update tag ${{ github.run_number }}"
